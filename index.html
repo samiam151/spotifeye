@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Publisher / Subscriber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <h1>Spotifeye</h1>
+
+        <div class="lastPlayed--container">
+            <p class="lastPlayed--header">Last Played</p>
+            <p class="lastPlayed"></p>
+        </div>
+
+        <p class="playingStatus">
+            Playing song from: 
+            <span class="playingStatus--year"></span>
+        </p>
+    </header>
+
+    <div class="songsContainer"></div>
+
+    <div class="results">
+        <p class="result"></p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="js/song.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/playbar.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

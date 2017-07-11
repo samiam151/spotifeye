@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,600');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+.results {
+    background-color: limegreen;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.results p {
+    text-align: center;
+}
+
+header.header {
+    padding: 1em;
+    background-color: limegreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+header.header h1 {
+    flex-basis: 35%;
+    color: white;
+}
+
+header.header .playingStatus {
+    font-size: 1.2em;
+    flex-basis: 35%;
+    text-align: right;
+}
+
+header.header .playingStatus--year {
+    font-weight: 600;
+}
+
+.button {
+    padding: 7px 10px;
+    background-color: cornflowerblue;
+    border: 3px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+    margin: 5px;
+    text-transform: capitalize;
+}
+
+.button.button--active {
+    color: white;
+}
+
+.songsContainer {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5em 0 6em 0;
+}
+
+.songsContainer .song__html {
+    font-size: 0.775em;
+    width: 100%;
+    margin: 2px;
+}
+
+.song__html h3.song--title {
+    flex: 0 0 31%;
+}
+
+.song__html p.song--artist {
+    flex: 0 0 15%;
+}
+
+.songsContainer .song__html .song__html--inner {
+    background-color: #fff;
+    border: 0.2px solid rgba(0,0,0,0.1);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    padding-left: 14px;
+}
+
+.songsContainer .song__html .song__html--inner * {
+    margin-right: 1em;
+}
+.songsContainer .song__html .song__html--inner:hover {
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.lastPlayed--container {
+    flex-basis: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.lastPlayed--container .lastPlayed--header {
+    font-weight: 600;
+}
+
+.lastPlayed {
+    font-size: 0.9em;
+    text-align: center;
+}
