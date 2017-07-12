@@ -14,11 +14,11 @@ class SongList {
 
         Events.subscribe("sort/songs", (info) => {
            this.sortBy(info.name, info.order);
-           this.replaceSongs();
+           this.render();
         });
     }
 
-    replaceSongs() {
+    render() {
         this.targetElement.innerHTML = "";
         this.songs.forEach(song => {
             $(this.targetElement).append(song.element);
@@ -35,19 +35,13 @@ class SongList {
     sortBy(name, order) {
         let sortedSongs = this.songs.sort((x, y) => {
             if (order === "asc"){
-                if (y[name] > x[name])
-                    return 1;
-                else
-                    return -1;
+                return (y[name] > x[name]) ? 1 : -1;
             }
             if (order === "desc"){
-                if (y[name] < x[name])
-                    return 1;
-                else
-                    return -1;
+                return (y[name] < x[name]) ? 1 : -1;
             }
         });
-        console.log(sortedSongs.slice(0, 2.).map(x => x[name]).join(" "));
+        console.log(sortedSongs.slice(0, 2).map(x => x[name]).join(" "));
         return sortedSongs;
     }
 }

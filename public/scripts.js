@@ -15,18 +15,19 @@ function init() {
         })
     });
 
-    const songsContainer = document.querySelector(".songsContainer");
+    let songsContainer = document.querySelector(".songsContainer");
+    let sorterContainer = document.querySelector(".sorterContainer");
     SongService.getSongs().then((data) => {
         // Cache data
         let songs = data.songs.filter(forUnlikedArtist);
         let categories = SongsDataService.getCategories(songs);
-        let songObjs = songs.map(song => new Song(song.title, song.artist, song.year, song.img_url));
+        let songObjs = songs.map(song => new Song(song.title, song.artist, song.year, song.url, song.type, song.name));
         let songlist = new SongList(songsContainer, songObjs);
         
         // Add sorters
-        let sorterContainer = document.querySelector(".sorterContainer");
         categories.forEach(category => {
             let newCategory = new SortItem(category);
+            /// @ts-ignore
             $(sorterContainer).append(newCategory.element);
         })
 

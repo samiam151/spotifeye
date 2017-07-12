@@ -93,11 +93,15 @@ header.header .playingStatus--year {
 }
 
 .song__html h3.song--title {
-    flex: 0 0 31%;
+    flex: 0 0 30%;
 }
 
 .song__html p.song--artist {
-    flex: 0 0 15%;
+    flex: 0 0 20%;
+}
+
+.song__html p.song--year {
+    flex: 0 0 20%;
 }
 
 .songsContainer .song__html .song__html--inner {
@@ -139,6 +143,12 @@ header.header .playingStatus--year {
     background-color: rgba(255,255,255,0.9);
 }
 
+input#header--search {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
 .sorterContainer {
     display: none;
     padding: 10px;
@@ -149,6 +159,7 @@ header.header .playingStatus--year {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .sorterContainer .sorter--item {

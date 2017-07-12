@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>/Spotifye</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     
@@ -35,7 +35,13 @@
 
     <!-- Sort Bar -->
     <div class="sorter header--fixed">
-        <div class="sorterContainer"></div>
+        <div class="sorterContainer">
+            <div class="searchbar">
+                <!--<label for="header--search">Search: </label>-->
+                <input class="input header--search__input" type="text" id="header--search" placeholder="Search songs...">
+            </div>
+        </div>
+        
     </div>
 
     <!--Songs Container-->
@@ -46,10 +52,12 @@
         <p class="result"></p>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/8e890d1b9b.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.min.js"></script>
+    <script type="text/javascript" src="https://use.fontawesome.com/8e890d1b9b.js"></script>
     <script type="text/javascript" src="js/events.js"></script>
-    <script type="text/javascript" src="data/songs--service.js"></script>
+    <script type="text/javascript" src="js/songs--service.js"></script>
+    <script type="text/javascript" src="js/song--player.js"></script>
     <script type="text/javascript" src="js/songs--history.js"></script>
     <script type="text/javascript" src="js/song.js"></script>
     <script type="text/javascript" src="js/songlist.js"></script>
