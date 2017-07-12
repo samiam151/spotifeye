@@ -20,9 +20,9 @@ const SongPlayer = (function(){
         let url = song.url;
 
         SongService.getSongFromServer(song)
-        .then(data => {      
-           var Data = data.response;   
-           process(Data);
+            .then(data => {      
+                var Data = data.response;   
+                process(Data);
         });
     }
 

@@ -3,6 +3,8 @@ const fs = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
 
+const musicFolder = "C:/Users/samia/Music/New Music/";
+
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 

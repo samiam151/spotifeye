@@ -5,7 +5,7 @@ class Song {
     constructor(title="Unknown", artist="Unknown", year="Unknown", url, type="", album="", filename=""){ 
         this.title = title;
         this.artist = artist;
-        this.year = year;
+        this.year = year ? year : "N/A";
         this.id = Math.round(Math.random() * 10000);
         this.url = url;
         this.type = type;

@@ -33,7 +33,7 @@ const SongService = (function(){
 var SongsDataService = (function(){
 
     function getCategories(songs){
-        return Object.keys(songs[0]);
+        return Object.keys(songs[0]).sort();
     }
 
     return {
