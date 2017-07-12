@@ -8,11 +8,11 @@ const SongPlayer = (function(){
         source = null;
 
     Events.subscribe("song/play", function(info){
-        playCallback(info)   ;     
+        playCallback(info);     
     });
 
     Events.subscribe("song/stop", function(info){
-        playCallback(info)   ;     
+        stopSongPlaying();     
     });
 
     function playCallback(info){
