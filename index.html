@@ -4,36 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Publisher / Subscriber</title>
+    <title>/Spotifye</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <header class="header">
+    <!--Header-->
+    <header class="header header--fixed">
         <h1>Spotifeye</h1>
 
+        <!--Last PLayed-->
         <div class="lastPlayed--container">
             <p class="lastPlayed--header">Last Played</p>
             <p class="lastPlayed"></p>
         </div>
 
-        <p class="playingStatus">
-            Playing song from: 
-            <span class="playingStatus--year"></span>
-        </p>
+        <div class="accessories">
+            <!--Sort toggle button-->
+            <div class="sorter--toggleButton">
+                <i class="fa fa-filter"></i>
+            </div>
+
+            <!--Playing Year-->
+            <p class="playingStatus">
+                Playing song from: 
+                <span class="playingStatus--year"></span>
+            </p>
+        </div>
     </header>
 
+    <!-- Sort Bar -->
+    <div class="sorter header--fixed">
+        <div class="sorterContainer"></div>
+    </div>
+
+    <!--Songs Container-->
     <div class="songsContainer"></div>
 
+    <!--Now Playing Bar-->
     <div class="results">
         <p class="result"></p>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/8e890d1b9b.js"></script>
     <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="data/songs--service.js"></script>
+    <script type="text/javascript" src="js/songs--history.js"></script>
     <script type="text/javascript" src="js/song.js"></script>
+    <script type="text/javascript" src="js/songlist.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
     <script type="text/javascript" src="js/playbar.js"></script>
+    <script type="text/javascript" src="js/sort.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>

@@ -35,6 +35,9 @@ header.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.header--fixed {
     position: fixed;
     width: 100%;
 }
@@ -44,9 +47,19 @@ header.header h1 {
     color: white;
 }
 
-header.header .playingStatus {
+header.header .accessories {
     font-size: 1.2em;
     flex-basis: 35%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header.header .accessories > * {
+    margin: 0 10px;
+}
+
+header.header .playingStatus {
     text-align: right;
 }
 
@@ -119,4 +132,53 @@ header.header .playingStatus--year {
 .lastPlayed {
     font-size: 0.9em;
     text-align: center;
+}
+
+.sorter.header--fixed {
+    top: 4.35em;;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.sorterContainer {
+    display: none;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.sorterContainer.show {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.sorterContainer .sorter--item {
+    list-style-type: none;
+    margin: 0 10px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+
+.sorterContainer .sorter--item i {
+    font-size: 0.6em;
+    position: relative;
+    top: -2px;
+    left: 6px;
+}
+
+.sorterContainer .sorter--item:hover {
+    color: forestgreen;
+    cursor: pointer;
+    border-color: forestgreen;
+}
+
+.sorter--toggleButton {
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: rgba(255,255,255,0.3);
+    border: 2px solid forestgreen;
+}
+
+.sorter--toggleButton:hover {
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
 }

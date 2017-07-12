@@ -22,6 +22,7 @@ class Header {
 
     updateLastPlayed(song){
         let lastPlayed = SongHistory.getLastPlayed();
+        /// @ts-ignore
         this.lastPlaying.innerText = lastPlayed ? `"${lastPlayed.title}" by ${lastPlayed.artist}` : "";
     }
 }

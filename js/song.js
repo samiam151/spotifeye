@@ -26,6 +26,7 @@ class Song {
     }
     
     buildTemplate() {
+        /// @ts-ignore
         return $(`
             <div class="song__html" data-id="${this.id}" data-title="${this.title}">
                 <div class="song__html--inner">
@@ -37,48 +38,3 @@ class Song {
         `)[0];
     }
 }
-
-const SongService = (function(){
-    function getSongs(){
-        return new Promise((resolve, reject) => {
-            let request = new XMLHttpRequest();
-            request.open("GET", "songs.json", true);
-            request.onload = () => resolve(JSON.parse(request.responseText));
-            request.onerror = () => reject(request.statusText);
-            request.send();
-        });
-    }
-    
-    return {
-        getSongs: getSongs
-    }
-}());
-
-let SongHistory = (function(){
-    var index = 0,
-        lastPlayedIndex = -2,
-        songsPlayed = [];
-
-    Events.subscribe("song/play", (song) => {
-        songsPlayed.push(song.song);
-        index += 1;
-        lastPlayedIndex += 1;
-    });
-
-    function length(){
-        return index;
-    }
-
-    function getLastPlayed() {
-        if (lastPlayedIndex < 0)
-            return null;
-
-        return songsPlayed[lastPlayedIndex];
-    }
-
-    return {
-        history: songsPlayed,
-        length: songsPlayed.length,
-        getLastPlayed: getLastPlayed
-    };
-}());

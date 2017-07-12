@@ -9,20 +9,31 @@ window.onload = function(){
 };
 
 function init() {
-    const songsContainer = document.querySelector(".songsContainer");
+    window.addEventListener("click", (e) => {
+        Events.emit("window/click", {
+            event: e
+        })
+    });
 
+    const songsContainer = document.querySelector(".songsContainer");
     SongService.getSongs().then((data) => {
-        data.songs
-            .sort(sortByArtistDesc)
-            .filter(filterForUnlikedArtist)
-            .forEach(song => {
-                let newSong = new Song(song.title, song.artist, song.year, song.img_url);
-                $(songsContainer).append(newSong.element);
-            });
+        // Cache data
+        let songs = data.songs.filter(forUnlikedArtist);
+        let categories = SongsDataService.getCategories(songs);
+        let songObjs = songs.map(song => new Song(song.title, song.artist, song.year, song.img_url));
+        let songlist = new SongList(songsContainer, songObjs);
+        
+        // Add sorters
+        let sorterContainer = document.querySelector(".sorterContainer");
+        categories.forEach(category => {
+            let newCategory = new SortItem(category);
+            $(sorterContainer).append(newCategory.element);
+        })
+
     });
 }
 
-function filterForUnlikedArtist(song){
+function forUnlikedArtist(song){
     return !song.artist.includes("Elvis Presley") 
         && !song.artist.includes("Jimmy Buffett")
         && !song.artist.includes("Bill Withers") 
@@ -30,6 +41,10 @@ function filterForUnlikedArtist(song){
         && !(song.year < 1970);
 }
 
-function sortByArtistDesc(x, y){
-    return y.artist > x.artist ? -1 : 1;
-}
+(function(){
+    let sortButton = document.querySelector(".sorter--toggleButton"),
+        sortContainer = document.querySelector(".sorterContainer");
+    sortButton.addEventListener("click", function(){
+        sortContainer.classList.toggle("show");
+    });
+}());
