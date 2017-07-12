@@ -2,7 +2,18 @@
 "use strict";
 
 const SongService = (function(){
+    let songs = null;
+
+    function cacheSongs(songs){
+        if (!songs){
+            songs = songs;
+        }
+    }
+
     function getSongs(){
+        if (songs) {
+            return songs;
+        }
         return new Promise((resolve, reject) => {
             let request = new XMLHttpRequest();
             request.open("GET", "/data", true);
@@ -26,7 +37,8 @@ const SongService = (function(){
     
     return {
         getSongs: getSongs,
-        getSongFromServer: getSongFromServer
+        getSongFromServer: getSongFromServer,
+        cacheSongs: cacheSongs
     }
 }());
 

@@ -1,14 +1,15 @@
 /// @ts-check
 "use strict";
 
-const header = new Header();
-const playbar = new Playbar();
-
 window.onload = function(){
     init();
 };
 
 function init() {
+    const header = new Header();
+    const playbar = new Playbar();
+    const searchbar = new SearchBar(document.querySelector("#header--search"));
+
     window.addEventListener("click", (e) => {
         Events.emit("window/click", {
             event: e
@@ -20,6 +21,7 @@ function init() {
     SongService.getSongs().then((data) => {
         // Cache data
         console.log(data.songs);
+        SongService.cacheSongs(data.songs);
         let songs = data.songs;
         let categories = SongsDataService.getCategories(songs);
         let songObjs = songs.map(song => new Song(song.title, song.artist, song.year, song.url, song.type, song.album, song.name));

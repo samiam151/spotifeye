@@ -16,11 +16,29 @@ class SongList {
            this.sortBy(info.name, info.order);
            this.render();
         });
+
+        Events.subscribe("search/term", (info) => {
+          let term = info.term;
+            console.log(term);
+          let filterSongs = this.searchFilter(term);
+          console.log(filterSongs.length);
+          this.render(filterSongs);
+        });
     }
 
-    render() {
+    searchFilter(term) {
+        return this.songs.filter(song => {
+            return [song.title, song.artist, song.album].some(testCase => {
+                if (testCase)
+                    return testCase.toLowerCase().includes(term.toLowerCase());
+                return;
+            });
+        });
+    }
+
+    render(songs = this.songs) {
         this.targetElement.innerHTML = "";
-        this.songs.forEach(song => {
+        songs.forEach(song => {
             $(this.targetElement).append(song.element);
         });
     }
