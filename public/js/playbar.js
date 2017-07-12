@@ -15,10 +15,17 @@ class Playbar {
 
     updateText(song) {
         /// @ts-ignore
-        this.element.innerHTML = `
-            <h2>${song.title}</h2>
-            <p>${song.artist}</p>
-            <p>${song.year}</p>
-        `;
+        if (song.title && song.artist){
+            this.element.innerHTML = `
+                <h2>${song.title}</h2>
+                <p>${song.artist}</p>
+                <p>${song.year}</p>
+            `;
+        } else {
+             this.element.innerHTML = `
+                <p>${song.fileName}</p>
+            `;
+        }
+         
     }
 }

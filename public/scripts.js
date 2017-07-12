@@ -19,9 +19,10 @@ function init() {
     let sorterContainer = document.querySelector(".sorterContainer");
     SongService.getSongs().then((data) => {
         // Cache data
-        let songs = data.songs.filter(forUnlikedArtist);
+        console.log(data.songs);
+        let songs = data.songs;
         let categories = SongsDataService.getCategories(songs);
-        let songObjs = songs.map(song => new Song(song.title, song.artist, song.year, song.url, song.type, song.name));
+        let songObjs = songs.map(song => new Song(song.title, song.artist, song.year, song.url, song.type, song.album, song.name));
         let songlist = new SongList(songsContainer, songObjs);
         
         // Add sorters

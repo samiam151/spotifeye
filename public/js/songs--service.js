@@ -13,7 +13,6 @@ const SongService = (function(){
     }
 
     function getSongFromServer(song){
-        
         return new Promise((resolve, reject) => {
             let request = new XMLHttpRequest();
             request.open("POST", `/song`, true);
@@ -21,9 +20,7 @@ const SongService = (function(){
             request.responseType = "arraybuffer";
             request.onload = () => resolve(request);
             request.onerror = () => reject(request.statusText);
-            request.send(JSON.stringify(song));
-
-            
+            request.send(JSON.stringify(song)); 
         });
     }
     

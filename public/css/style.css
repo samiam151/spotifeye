@@ -104,6 +104,10 @@ header.header .playingStatus--year {
     flex: 0 0 20%;
 }
 
+.song__html p.song--album {
+    flex: 0 0 20%;
+}
+
 .songsContainer .song__html .song__html--inner {
     background-color: #fff;
     border: 0.2px solid rgba(0,0,0,0.1);

@@ -43,7 +43,8 @@ walker.on("file", (root, fileStats, next) => {
                     title: tags.title,
                     artist: tags.artist ? tags.artist.removeNull() : "",
                     year: tags.year,
-                    album: fileStats.album
+                    album: tags.album,
+                    track: tags.v1.track
                 });
            });
         }
