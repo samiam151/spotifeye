@@ -12,6 +12,12 @@ let SongHistory = (function(){
         lastPlayedIndex += 1;
     });
 
+    Events.subscribe('playing/update', (song) => { 
+        songsPlayed.push(song.newSong);
+        index += 1;
+        lastPlayedIndex += 1;
+    });
+
     function length(){
         return index;
     }

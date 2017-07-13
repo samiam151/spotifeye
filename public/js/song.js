@@ -2,11 +2,11 @@
 "use strict";
 
 class Song {
-    constructor(title="Unknown", artist="Unknown", year="Unknown", url, type="", album="", filename=""){ 
+    constructor(id, title="Unknown", artist="Unknown", year="Unknown", url, type="", album="", filename=""){ 
         this.title = title;
         this.artist = artist;
         this.year = year ? year : "N/A";
-        this.id = Math.round(Math.random() * 10000);
+        this.id = id;
         this.url = url;
         this.type = type;
         this.fileName = filename;
@@ -27,7 +27,8 @@ class Song {
             year: this.year,
             url: this.url,
             type: this.type,
-            fileName: this.fileName
+            fileName: this.fileName,
+            id: this.id
         }
     }
     

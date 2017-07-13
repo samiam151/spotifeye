@@ -13,11 +13,16 @@ class Header {
             this.updateYear(song.song);
             this.updateLastPlayed(song);
         });
+
+         Events.subscribe("playing/update", (song) => {
+            this.updateYear(song.newSong);
+            this.updateLastPlayed(song.newSong);
+        });
     }
 
     updateYear(song) {
         /// @ts-ignore
-        this.playingStatusElement.innerText = song.year;
+        this.playingStatusElement.innerText = song.hasOwnProperty("year")  ? song.year : "";
     }
 
     updateLastPlayed(song){

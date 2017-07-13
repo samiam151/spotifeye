@@ -11,7 +11,7 @@ let options = {
 let songFormats = ["mp3", "wav"];
 let walker = walk.walk(musicBaseFolder, options),
     allSongs = [];
-
+let songIndex = 0;
 
 String.prototype.removeNull = function () {
     try {
@@ -22,6 +22,7 @@ String.prototype.removeNull = function () {
 }
 
 walker.on("file", (root, fileStats, next) => {
+    
     let url = path.join(root, fileStats.name.replace(/\\/g, "/"));
     fs.readFile(url, function () {
         // let ext = fileStats.name.split(".")[1];
@@ -38,6 +39,7 @@ walker.on("file", (root, fileStats, next) => {
 
                 allSongs.push({
                     // type: ext,
+                    id: songIndex,
                     name: fileStats.name ? fileStats.name.removeNull() : "",
                     url: url,
                     title: tags.title,
@@ -51,6 +53,7 @@ walker.on("file", (root, fileStats, next) => {
         next();
     });
 
+    songIndex += 1;
     writeFile(allSongs);
 });
 

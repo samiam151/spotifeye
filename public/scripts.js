@@ -20,11 +20,10 @@ function init() {
     let sorterContainer = document.querySelector(".sorterContainer");
     SongService.getSongs().then((data) => {
         // Cache data
-        console.log(data.songs);
         SongService.cacheSongs(data.songs);
         let songs = data.songs;
         let categories = SongsDataService.getCategories(songs);
-        let songObjs = songs.map(song => new Song(song.title, song.artist, song.year, song.url, song.type, song.album, song.name));
+        let songObjs = songs.map(song => new Song(song.id, song.title, song.artist, song.year, song.url, song.type, song.album, song.name));
         let songlist = new SongList(songsContainer, songObjs);
         
         // Add sorters
@@ -37,18 +36,13 @@ function init() {
     });
 }
 
-function forUnlikedArtist(song){
-    return !song.artist.includes("Elvis Presley") 
-        && !song.artist.includes("Jimmy Buffett")
-        && !song.artist.includes("Bill Withers") 
-        && !song.artist.includes("Tom Petty")
-        && !(song.year < 1970);
-}
-
 (function(){
     let sortButton = document.querySelector(".sorter--toggleButton"),
         sortContainer = document.querySelector(".sorterContainer");
     sortButton.addEventListener("click", function(){
         sortContainer.classList.toggle("show");
+        Events.emit("filter/toggle", {
+            isOpen: sortContainer.classList.contains("show")
+        });
     });
 }());

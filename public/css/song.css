@@ -1,0 +1,15 @@
+.song__html h3.song--title {
+    flex: 0 0 30%;
+}
+
+.song__html p.song--artist {
+    flex: 0 0 20%;
+}
+
+.song__html p.song--year {
+    flex: 0 0 20%;
+}
+
+.song__html p.song--album {
+    flex: 0 0 20%;
+}

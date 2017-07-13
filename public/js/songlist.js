@@ -19,16 +19,23 @@ class SongList {
 
         Events.subscribe("search/term", (info) => {
           let term = info.term;
-            console.log(term);
           let filterSongs = this.searchFilter(term);
-          console.log(filterSongs.length);
           this.render(filterSongs);
+        });
+
+        Events.subscribe("filter/toggle", info => {
+            let isOpen = info.isOpen;
+            if (isOpen){
+                this.targetElement.classList.add("openFilter");
+            } else {
+                this.targetElement.classList.remove("openFilter");
+            }
         });
     }
 
     searchFilter(term) {
         return this.songs.filter(song => {
-            return [song.title, song.artist, song.album].some(testCase => {
+            return [song.title, song.artist, song.album, song.fileName].some(testCase => {
                 if (testCase)
                     return testCase.toLowerCase().includes(term.toLowerCase());
                 return;

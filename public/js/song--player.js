@@ -2,27 +2,41 @@
 "use strict";
 
 const SongPlayer = (function(){
+    let nowPlaying = null;
     /// @ts-ignore
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     let context = new AudioContext(),
         source = null;
 
     Events.subscribe("song/play", function(info){
-        playCallback(info);     
+        nowPlaying = info.song;
+        initPlayback(info);     
     });
 
     Events.subscribe("song/stop", function(info){
         stopSongPlaying();     
     });
 
-    function playCallback(info){
-        let song = info.song;
+    Events.subscribe("song/next", function(info){
+          stopSongPlaying();
+          let nextSong = SongService.getNextSong(nowPlaying);
+
+          Events.emit("playing/update", {
+              newSong: nextSong
+          });
+
+          initPlayback(nextSong);
+    });
+
+    function initPlayback(info){
+        
+        let song = info.song ? info.song : info;
+        
         let url = song.url;
 
         SongService.getSongFromServer(song)
             .then(data => {      
-                var Data = data.response;   
-                process(Data);
+                process(data.response);
         });
     }
 

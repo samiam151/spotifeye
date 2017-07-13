@@ -22,13 +22,13 @@ const Events = (function(){
             }
         },
 
-        emit: function(topic, info){
+        emit: function(topic, info = {}){
             // If the topic doesn't exist, or there's no listeners in queue, just leave
             if(!hOP.call(topics, topic))
                 return;
 
             topics[topic].forEach(function(item){
-                item(info != undefined ? info : {});
+                item(info);
             });
         }
     };

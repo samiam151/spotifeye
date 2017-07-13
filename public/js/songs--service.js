@@ -4,9 +4,9 @@
 const SongService = (function(){
     let songs = null;
 
-    function cacheSongs(songs){
+    function cacheSongs(rsongs){
         if (!songs){
-            songs = songs;
+            songs = rsongs;
         }
     }
 
@@ -23,6 +23,24 @@ const SongService = (function(){
         });
     }
 
+    function getNextSong(nowPlaying) {
+        let currentID = nowPlaying.id;
+        let nextID = ++nowPlaying.id;
+        let nextSong = null; 
+        let groupSongs = SongService.getSongs();
+        
+        if (nextID < songs.length) {
+            let currentSongsIndex = groupSongs.indexOf(groupSongs.find(song => song.id === currentID));
+            return groupSongs[++currentSongsIndex];
+        }
+        return songs[0];
+            
+    }
+
+    function setSongs(esongs){
+        songs = esongs;
+    }
+
     function getSongFromServer(song){
         return new Promise((resolve, reject) => {
             let request = new XMLHttpRequest();
@@ -36,6 +54,8 @@ const SongService = (function(){
     }
     
     return {
+        setSongs: setSongs,
+        getNextSong: getNextSong,
         getSongs: getSongs,
         getSongFromServer: getSongFromServer,
         cacheSongs: cacheSongs
