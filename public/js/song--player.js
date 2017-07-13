@@ -6,6 +6,7 @@ const SongPlayer = (function(){
     /// @ts-ignore
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     let context = new AudioContext(),
+        contexts = [],
         source = null;
 
     Events.subscribe("song/play", function(info){
@@ -16,6 +17,10 @@ const SongPlayer = (function(){
     Events.subscribe("song/stop", function(info){
         stopSongPlaying();     
     });
+
+    // Events.subscribe("song/back", function(info){
+    //     startFromBeginning();     
+    // });
 
     Events.subscribe("song/next", function(info){
           stopSongPlaying();
@@ -28,31 +33,53 @@ const SongPlayer = (function(){
           initPlayback(nextSong);
     });
 
-    function initPlayback(info){
-        
-        let song = info.song ? info.song : info;
-        
+    function initPlayback(info){  
+        let song = info.song ? info.song : info;      
         let url = song.url;
+        let id = song.id;
+        let songInContexts = contexts.find(contextObj => contextObj["id"] === id);
+        // if (songInContexts){
+        //     playSource(songInContexts["source"])
+        // }
 
         SongService.getSongFromServer(song)
             .then(data => {      
-                process(data.response);
+                process(data.response, song);
         });
     }
 
-    function stopSongPlaying(){
+    function startFromBeginning() {
+        source.stop();
+        source.start();
+    }
+
+    function stopSongPlaying() {
         if (source){
             source.stop();
         }
     }
 
-    function process(Data) {
+    function cacheSource(source, song) {
+        if (!contexts.some(contextObj => contextObj["id"] === song.id)){
+            contexts.push({
+                id: song.id,
+                source: source
+            });
+        }
+    }
+
+    function process(audiostream, song) {
         stopSongPlaying();
         source = context.createBufferSource(); // Create Sound Source
-        context.decodeAudioData(Data, function(buffer){
+        // cacheSource(source, song);
+        context.decodeAudioData(audiostream, function(buffer){
             source.buffer = buffer;
-            source.connect(context.destination); 
-            source.start(context.currentTime);
-        })
+            playSource(source);
+        });
+    }
+
+    function playSource(source){
+        source.connect(context.destination); 
+        source.start(context.currentTime);
     }
 }());

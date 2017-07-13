@@ -8,7 +8,7 @@ window.onload = function(){
 function init() {
     const header = new Header();
     const playbar = new Playbar();
-    const searchbar = new SearchBar(document.querySelector("#header--search"));
+    Searchbar.init(document.querySelector("#header--search"));
 
     window.addEventListener("click", (e) => {
         Events.emit("window/click", {

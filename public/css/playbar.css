@@ -23,6 +23,7 @@
     border: 0.1px solid #CCD;
     width: 45%;
     height: 52px;
+    text-transform: capitalize;
 }
 
 .playbar .playbar--nowPlaying h2 {
@@ -51,6 +52,15 @@
 }
 
 .playbar .playbar--buttons i:hover {
-    color: black;
+    color: lightgreen;
     cursor: pointer;
 }
+
+.playbar .playbar--buttons > div.invalid i,
+.playbar .playbar--buttons > div.invalid i:hover {
+    background-color: lightgrey;
+    border: 1px solid grey;
+    color: grey;
+}
+
+

@@ -1,4 +1,5 @@
 /// @ts-check
+/// <reference path="../js/events.js" />
 "use strict";
 
 class SortItem {

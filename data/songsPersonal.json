@@ -191,7 +191,7 @@
             "track": 11
         },
         {
-            "id": 28,
+            "id": 29,
             "name": "1-12 Complexion (A Zulu Love) (Feat. Rapsody).mp3",
             "url": "C:\\Users\\samia\\Music\\To Pimp a Butterfly\\1-12 Complexion (A Zulu Love) (Feat. Rapsody).mp3",
             "title": "Complexion (A Zulu Love) (Feat. Rapsody)",
@@ -621,7 +621,7 @@
             "track": 4
         },
         {
-            "id": 81,
+            "id": 82,
             "name": "05 05. Voyage to Atlantis.mp3",
             "url": "C:\\Users\\samia\\Music\\on my mind\\05 05. Voyage to Atlantis.mp3",
             "title": "05. Voyage to Atlantis",
@@ -631,7 +631,7 @@
             "track": 5
         },
         {
-            "id": 82,
+            "id": 83,
             "name": "06 Caravan Of Love.mp3",
             "url": "C:\\Users\\samia\\Music\\on my mind\\06 Caravan Of Love.mp3",
             "title": "Caravan Of Love",
@@ -731,7 +731,7 @@
             "track": null
         },
         {
-            "id": 111,
+            "id": 112,
             "name": "love tko.mp3",
             "url": "C:\\Users\\samia\\Music\\on my mind\\love tko.mp3",
             "title": null,
@@ -1521,7 +1521,7 @@
             "track": 6
         },
         {
-            "id": 235,
+            "id": 236,
             "name": "07. Interlude- That's Love (Prod. by Ludwig Gorransen).mp3",
             "url": "C:\\Users\\samia\\Music\\New Music\\Chance The Rapper- Acid Rap\\07. Interlude- That's Love (Prod. by Ludwig Gorransen).mp3",
             "title": "Interlude (That's Love)",
@@ -1651,7 +1651,7 @@
             "track": 6
         },
         {
-            "id": 252,
+            "id": 253,
             "name": "07 - Mixtape (feat Young Thug Lil Yachty).mp3",
             "url": "C:\\Users\\samia\\Music\\New Music\\Chance The Rapper - Coloring Book\\07 - Mixtape (feat Young Thug Lil Yachty).mp3",
             "title": "Mixtape (feat. Young Thug, Lil",
@@ -1851,7 +1851,7 @@
             "track": null
         },
         {
-            "id": 277,
+            "id": 278,
             "name": "13 Backyardbanddc - byb-still-in-the-game-disc-2.mp3",
             "url": "C:\\Users\\samia\\Music\\New Music\\Backyardbanddc - Backyard - Triple Threat\\13 Backyardbanddc - byb-still-in-the-game-disc-2.mp3",
             "title": "BYB Still In The Game",
@@ -2011,7 +2011,7 @@
             "track": null
         },
         {
-            "id": 293,
+            "id": 294,
             "name": "29 Backyardbanddc - fakin-like-disc-3.mp3",
             "url": "C:\\Users\\samia\\Music\\New Music\\Backyardbanddc - Backyard - Triple Threat\\29 Backyardbanddc - fakin-like-disc-3.mp3",
             "title": "Fakin Like",
@@ -2041,7 +2041,7 @@
             "track": 1
         },
         {
-            "id": 299,
+            "id": 300,
             "name": "02-Orange_MusicToCodeBy.mp3",
             "url": "C:\\Users\\samia\\Music\\MusicToCodeByCollection\\02-Orange_MusicToCodeBy.mp3",
             "title": "Orange",
@@ -2151,7 +2151,7 @@
             "track": 3
         },
         {
-            "id": 310,
+            "id": 311,
             "name": "13-Sienna_MusicToCodeBy.mp3",
             "url": "C:\\Users\\samia\\Music\\MusicToCodeByCollection\\13-Sienna_MusicToCodeBy.mp3",
             "title": "Sienna",
@@ -2552,6 +2552,116 @@
         },
         {
             "id": 357,
+            "name": "01-Crooked_Still-Can't_you_hear_me_callin'.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\01-Crooked_Still-Can't_you_hear_me_callin'.mp3",
+            "title": "Can't you hear me callin'",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 1
+        },
+        {
+            "id": 358,
+            "name": "02-Crooked_Still-Little_sadie.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\02-Crooked_Still-Little_sadie.mp3",
+            "title": "Little sadie",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 2
+        },
+        {
+            "id": 359,
+            "name": "03-Crooked_Still-New_railroad.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\03-Crooked_Still-New_railroad.mp3",
+            "title": "New railroad",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 3
+        },
+        {
+            "id": 360,
+            "name": "04-Crooked_Still-Oxford_town%Cumberland_gap.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\04-Crooked_Still-Oxford_town%Cumberland_gap.mp3",
+            "title": "Oxford town/Cumberland gap",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 4
+        },
+        {
+            "id": 361,
+            "name": "05-Crooked_Still-Lone_Pilgrim.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\05-Crooked_Still-Lone_Pilgrim.mp3",
+            "title": "Lone Pilgrim",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 5
+        },
+        {
+            "id": 362,
+            "name": "06-Crooked_Still-Come_on_in_my_kitchen.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\06-Crooked_Still-Come_on_in_my_kitchen.mp3",
+            "title": "Come on in my kitchen",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 6
+        },
+        {
+            "id": 363,
+            "name": "07-Crooked_Still-Ain't_no_grave.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\07-Crooked_Still-Ain't_no_grave.mp3",
+            "title": "Ain't no grave",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 7
+        },
+        {
+            "id": 364,
+            "name": "08-Crooked_Still-Ecstasy.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\08-Crooked_Still-Ecstasy.mp3",
+            "title": "Ecstasy",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 8
+        },
+        {
+            "id": 365,
+            "name": "09-Crooked_Still-Mountain_jumper.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\09-Crooked_Still-Mountain_jumper.mp3",
+            "title": "Mountain jumper",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 9
+        },
+        {
+            "id": 366,
+            "name": "10-Crooked_Still-Railroad_Bill.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\10-Crooked_Still-Railroad_Bill.mp3",
+            "title": "Railroad Bill",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 10
+        },
+        {
+            "id": 366,
+            "name": "11-Crooked_Still-Wind_and_rain.mp3",
+            "url": "C:\\Users\\samia\\Music\\Crooked_Still-Shaken_By_A_Low_Sound\\11-Crooked_Still-Wind_and_rain.mp3",
+            "title": "Wind and rain",
+            "artist": "Crooked Still",
+            "year": "2006",
+            "album": "Shaken by a low sound",
+            "track": 11
+        },
+        {
+            "id": 368,
             "name": "01 - Somos Familia.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\01 - Somos Familia.mp3",
             "title": "Somos Familia",
@@ -2561,7 +2671,7 @@
             "track": 1
         },
         {
-            "id": 358,
+            "id": 369,
             "name": "02 - El amigo Jos  .mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\02 - El amigo Jos  .mp3",
             "title": "El amigo Jos�",
@@ -2571,7 +2681,7 @@
             "track": 2
         },
         {
-            "id": 359,
+            "id": 370,
             "name": "03 - Me Lo gan  .mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\03 - Me Lo gan  .mp3",
             "title": "Me Lo gan�",
@@ -2581,7 +2691,7 @@
             "track": 3
         },
         {
-            "id": 360,
+            "id": 371,
             "name": "04 - Jugando Super Mario Bros.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\04 - Jugando Super Mario Bros.mp3",
             "title": "Jugando Super Mario Bros",
@@ -2591,7 +2701,7 @@
             "track": 4
         },
         {
-            "id": 361,
+            "id": 372,
             "name": "05 - El Anillo.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\05 - El Anillo.mp3",
             "title": "El Anillo",
@@ -2601,7 +2711,7 @@
             "track": 5
         },
         {
-            "id": 362,
+            "id": 373,
             "name": "06 - Los Dos Sabemos.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\06 - Los Dos Sabemos.mp3",
             "title": "Los Dos Sabemos",
@@ -2611,7 +2721,7 @@
             "track": 6
         },
         {
-            "id": 363,
+            "id": 374,
             "name": "07 - La Eternidad Del Amor.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\07 - La Eternidad Del Amor.mp3",
             "title": "La Eternidad Del Amor",
@@ -2621,7 +2731,7 @@
             "track": 7
         },
         {
-            "id": 364,
+            "id": 375,
             "name": "08 - Mi Melodia.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\08 - Mi Melodia.mp3",
             "title": "Mi Melodia",
@@ -2631,7 +2741,7 @@
             "track": 8
         },
         {
-            "id": 365,
+            "id": 376,
             "name": "09 - El Dony.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\09 - El Dony.mp3",
             "title": "El Dony",
@@ -2641,7 +2751,7 @@
             "track": 9
         },
         {
-            "id": 366,
+            "id": 377,
             "name": "10 -   breme La Puerta.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\10 -   breme La Puerta.mp3",
             "title": "�breme La Puerta",
@@ -2651,7 +2761,7 @@
             "track": 10
         },
         {
-            "id": 367,
+            "id": 378,
             "name": "11 - Loco.mp3",
             "url": "C:\\Users\\samia\\Music\\calle real\\11 - Loco.mp3",
             "title": "Loco",
@@ -2659,6 +2769,316 @@
             "year": "2009",
             "album": "Me Lo Gan�",
             "track": 11
+        },
+        {
+            "id": 384,
+            "name": "01 Take Saravá.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\01 Take Saravá.mp3",
+            "title": "Take Sarav�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Sylvia Torres",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 1
+        },
+        {
+            "id": 385,
+            "name": "02 Despedidia.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\02 Despedidia.mp3",
+            "title": "Despedidia\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Celso Machado",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 2
+        },
+        {
+            "id": 386,
+            "name": "03 Clarão de Lua.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\03 Clarão de Lua.mp3",
+            "title": "Clar�o de Lua\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Nazare Pereira",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 3
+        },
+        {
+            "id": 387,
+            "name": "04 Tatapá.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\04 Tatapá.mp3",
+            "title": "Tatap�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Jo�o Bosco",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 4
+        },
+        {
+            "id": 388,
+            "name": "05 Águas de Março (Waters of March).mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\05 Águas de Março (Waters of March).mp3",
+            "title": "�guas de Mar�o (Waters of Marc",
+            "artist": "Rosa Passos",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 5
+        },
+        {
+            "id": 389,
+            "name": "06 O Namorado da Viuva.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\06 O Namorado da Viuva.mp3",
+            "title": "O Namorado da Viuva\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Jorge Ben",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 6
+        },
+        {
+            "id": 390,
+            "name": "07 Canto des Tres Racas.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\07 Canto des Tres Racas.mp3",
+            "title": "Canto des Tres Racas\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Clara Nunes",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 7
+        },
+        {
+            "id": 391,
+            "name": "08 Mama África.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\08 Mama África.mp3",
+            "title": "Mama �frica\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Chico C�sar",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 8
+        },
+        {
+            "id": 392,
+            "name": "09 Essas Emoções.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\09 Essas Emoções.mp3",
+            "title": "Essas Emo��es\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Zeca Baleiro",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 9
+        },
+        {
+            "id": 393,
+            "name": "10 Visgo de Jaca.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\10 Visgo de Jaca.mp3",
+            "title": "Visgo de Jaca\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Martinho Da Vila",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 10
+        },
+        {
+            "id": 394,
+            "name": "11 Dança de Solidão.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\11 Dança de Solidão.mp3",
+            "title": "Dan�a de Solid�o\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Beth Carvalho",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 11
+        },
+        {
+            "id": 395,
+            "name": "12 Cantando No Toró.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\12 Cantando No Toró.mp3",
+            "title": "Cantando No Tor�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Chico Buarque",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 12
+        },
+        {
+            "id": 396,
+            "name": "13 Berekeré.mp3",
+            "url": "C:\\Users\\samia\\Music\\Brasileiro\\13 Berekeré.mp3",
+            "title": "Bereker�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+            "artist": "Geraldo Azevedo",
+            "year": "1999",
+            "album": "Putumayo Presents: Brasileiro\u0000",
+            "track": 13
+        },
+        {
+            "id": 400,
+            "name": "01 Golpe e' tierra (hablan los negros).mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\01 Golpe e' tierra (hablan los negros).mp3",
+            "title": "Golpe e' tierra (hablan los negros)",
+            "artist": "Susana Baca",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 1
+        },
+        {
+            "id": 401,
+            "name": "02 Ruperta.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\02 Ruperta.mp3",
+            "title": "Ruperta",
+            "artist": "Peru Negro",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 2
+        },
+        {
+            "id": 402,
+            "name": "03 Herida obscura.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\03 Herida obscura.mp3",
+            "title": "Herida obscura",
+            "artist": "Chabuca Granda & Oscar Aviles",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 3
+        },
+        {
+            "id": 403,
+            "name": "04 Yo te canto.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\04 Yo te canto.mp3",
+            "title": "Yo te canto",
+            "artist": "Eva Ayllon",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 4
+        },
+        {
+            "id": 404,
+            "name": "05 Saca camote con el pie.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\05 Saca camote con el pie.mp3",
+            "title": "Saca camote con el pie",
+            "artist": "Lucila Campos",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 5
+        },
+        {
+            "id": 405,
+            "name": "06 Negro carbon.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\06 Negro carbon.mp3",
+            "title": "Negro carbon",
+            "artist": "Manuel Donayre",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 6
+        },
+        {
+            "id": 406,
+            "name": "07 El picador.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\07 El picador.mp3",
+            "title": "El picador",
+            "artist": "Cecilia Barraza",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 7
+        },
+        {
+            "id": 407,
+            "name": "08 Negra Presuntuosa.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\08 Negra Presuntuosa.mp3",
+            "title": "Negra Presuntuosa",
+            "artist": "Susana Baca",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 8
+        },
+        {
+            "id": 408,
+            "name": "09 Cardo o ceniza.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\09 Cardo o ceniza.mp3",
+            "title": "Cardo o ceniza",
+            "artist": "Eva Ayllon",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 9
+        },
+        {
+            "id": 409,
+            "name": "10 Arroz con concolon.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\10 Arroz con concolon.mp3",
+            "title": "Arroz con concolon",
+            "artist": "Roberto Rivas",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 10
+        },
+        {
+            "id": 410,
+            "name": "11 Negrito chinchivi.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\11 Negrito chinchivi.mp3",
+            "title": "Negrito chinchivi",
+            "artist": "Lucila Campos",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 11
+        },
+        {
+            "id": 411,
+            "name": "12 Machete en su cuna.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\12 Machete en su cuna.mp3",
+            "title": "Machete en su cuna",
+            "artist": "Peru Negro",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 12
+        },
+        {
+            "id": 412,
+            "name": "13 Coplas de amor y tondero.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\13 Coplas de amor y tondero.mp3",
+            "title": "Coplas de amor y tondero",
+            "artist": "Olga Milla",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 13
+        },
+        {
+            "id": 413,
+            "name": "14 El Alcatraz.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\14 El Alcatraz.mp3",
+            "title": "El Alcatraz",
+            "artist": "Arturo 'Zambo' Cavero & Oscar Aviles",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 14
+        },
+        {
+            "id": 414,
+            "name": "15 El sueno de pochi.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\15 El sueno de pochi.mp3",
+            "title": "El sueno de pochi",
+            "artist": "Cecilia Barraza",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 15
+        },
+        {
+            "id": 415,
+            "name": "16 Morropon de san miguel.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\16 Morropon de san miguel.mp3",
+            "title": "Morropon de san miguel",
+            "artist": "Julie Freundt",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 16
+        },
+        {
+            "id": 416,
+            "name": "17 Comadre Cololiche.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\17 Comadre Cololiche.mp3",
+            "title": "Comadre Cololiche",
+            "artist": "Arturo 'Zambo' Cavero",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 17
+        },
+        {
+            "id": 417,
+            "name": "18 Inga.mp3",
+            "url": "C:\\Users\\samia\\Music\\AfroPeru\\18 Inga.mp3",
+            "title": "Inga",
+            "artist": "Nicomedes Santa Cruz",
+            "year": "2002",
+            "album": "Rough Guide To Afro-Peru",
+            "track": 18
         }
     ]
 }

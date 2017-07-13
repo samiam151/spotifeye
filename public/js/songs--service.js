@@ -37,10 +37,6 @@ const SongService = (function(){
             
     }
 
-    function setSongs(esongs){
-        songs = esongs;
-    }
-
     function getSongFromServer(song){
         return new Promise((resolve, reject) => {
             let request = new XMLHttpRequest();
@@ -54,7 +50,6 @@ const SongService = (function(){
     }
     
     return {
-        setSongs: setSongs,
         getNextSong: getNextSong,
         getSongs: getSongs,
         getSongFromServer: getSongFromServer,

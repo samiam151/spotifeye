@@ -1,4 +1,5 @@
 /// @ts-check
+/// <reference path="../scripts.js" />
 "use strict";
 
 class SongList {
@@ -13,8 +14,8 @@ class SongList {
         }
 
         Events.subscribe("sort/songs", (info) => {
-           this.sortBy(info.name, info.order);
-           this.render();
+           let sortedSongs = this.sortBy(info.name, info.order);
+           this.render(sortedSongs);
         });
 
         Events.subscribe("search/term", (info) => {
@@ -34,13 +35,28 @@ class SongList {
     }
 
     searchFilter(term) {
-        return this.songs.filter(song => {
+        let searchTerm = Searchbar.getSearchTerm();
+        let sortedSongs = this.songs;
+
+        if (searchTerm){
+            sortedSongs = sortedSongs.filter(song => {
+                return [song.title, song.artist, song.album, song.fileName].some(songAttribute => {
+                    if (songAttribute)
+                        return songAttribute.toLowerCase().includes(searchTerm.toLowerCase());
+                    return;
+                });
+            })
+        }
+
+        sortedSongs = sortedSongs.filter(song => {
             return [song.title, song.artist, song.album, song.fileName].some(testCase => {
                 if (testCase)
                     return testCase.toLowerCase().includes(term.toLowerCase());
                 return;
             });
         });
+
+        return sortedSongs;
     }
 
     render(songs = this.songs) {
@@ -58,7 +74,20 @@ class SongList {
     }
 
     sortBy(name, order) {
-        let sortedSongs = this.songs.sort((x, y) => {
+        let searchTerm = Searchbar.getSearchTerm();
+        let sortedSongs = this.songs;
+
+        if (searchTerm){
+            sortedSongs = sortedSongs.filter(song => {
+                return [song.title, song.artist, song.album, song.fileName].some(songAttribute => {
+                    if (songAttribute)
+                        return songAttribute.toLowerCase().includes(searchTerm.toLowerCase());
+                    return;
+                });
+            })
+        }
+
+        sortedSongs = sortedSongs.sort((x, y) => {
             if (order === "asc"){
                 return (y[name] > x[name]) ? 1 : -1;
             }
@@ -66,7 +95,8 @@ class SongList {
                 return (y[name] < x[name]) ? 1 : -1;
             }
         });
-        console.log(sortedSongs.slice(0, 2).map(x => x[name]).join(" "));
+
+                // let hasSearchTerm = searchbar.checkForSearch();
         return sortedSongs;
     }
 }

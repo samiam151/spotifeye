@@ -7,16 +7,18 @@ let SongHistory = (function(){
         songsPlayed = [];
 
     Events.subscribe("song/play", (song) => {
-        songsPlayed.push(song.song);
-        index += 1;
-        lastPlayedIndex += 1;
+        update(song.song);
     });
 
     Events.subscribe('playing/update', (song) => { 
-        songsPlayed.push(song.newSong);
+        update(song.newSong);
+    });
+
+    function update(song){
+        songsPlayed.push(song);
         index += 1;
         lastPlayedIndex += 1;
-    });
+    }
 
     function length(){
         return index;

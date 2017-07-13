@@ -27,10 +27,12 @@ header.header .accessories {
 
 header.header .accessories > * {
     margin: 0 10px;
+    text-transform: capitalize;
 }
 
 header.header .playingStatus {
     text-align: right;
+    display: none;
 }
 
 header.header .playingStatus--year {
@@ -39,7 +41,7 @@ header.header .playingStatus--year {
 
 /* Last Played */
 .lastPlayed--container {
-    flex-basis: 30%;
+    flex-basis: 70%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;

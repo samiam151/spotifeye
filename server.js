@@ -25,7 +25,12 @@ app.post("/song", (req, res) => {
     let url = req.body.url;
     res.set({"Content-Type": "audio/mpeg"});
     var readStream = fs.createReadStream(url);
-    readStream.pipe(res);
+    readStream.on("open", function(){
+        readStream.pipe(res);
+    });
+    readStream.on("error", (err) => {
+        res.end(err);
+    });
 });
 
 var port = process.env.PORT || 5000;

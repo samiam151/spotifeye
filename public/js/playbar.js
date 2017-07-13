@@ -6,6 +6,7 @@ class Playbar {
         this.nowPlaying = document.querySelector("div.playbar--nowPlaying");
         this.nextSong = document.querySelector(".playbar--buttons .playbar__nextButton");
         this.stopSong = document.querySelector(".playbar--buttons .playbar__stopButton");
+        this.startFromBeginning = document.querySelector(".playbar--buttons .playbar__back");
         this.isPlaying = false;
         this.songPlaying = null;
         
@@ -21,7 +22,10 @@ class Playbar {
 
         this.nextSong.addEventListener("click", (e) => {
             Events.emit("song/next");
-            
+        });
+
+        this.startFromBeginning.addEventListener("click", (e) => {
+            Events.emit("song/back");        
         });
 
         this.stopSong.addEventListener("click", (e) => {
@@ -35,7 +39,6 @@ class Playbar {
             this.nowPlaying.innerHTML = `
                 <h2>${song.title}</h2>
                 <p>${song.artist}</p>
-                <p>${song.year}</p>
             `;
         } else {
              this.nowPlaying.innerHTML = `
