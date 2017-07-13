@@ -16,7 +16,7 @@ class Song {
         this.element.addEventListener("click", (e) => {
             Events.emit("song/play", {
                 song: this.getSong()
-            })
+            });
         }, false);
     }
 

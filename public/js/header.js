@@ -28,6 +28,19 @@ class Header {
     updateLastPlayed(song){
         let lastPlayed = SongHistory.getLastPlayed();
         /// @ts-ignore
-        this.lastPlaying.innerText = lastPlayed ? `"${lastPlayed.title}" by ${lastPlayed.artist}` : "";
+        let template = "";
+
+        if (lastPlayed){
+            let hasBasicInfo = !!(lastPlayed.title && lastPlayed.artist);
+            if ( hasBasicInfo) {
+                template =  `"${lastPlayed.title}" by ${lastPlayed.artist}`;
+            } else {
+                template = `${lastPlayed.fileName}`;
+            }
+        } else {
+            template = ``;
+        }
+
+        this.lastPlaying.innerText = template;
     }
 }

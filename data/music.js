@@ -4,7 +4,10 @@ const walk = require("walk");
 const audoMetaData = require("audio-metadata");
 const id3 = require("id3js");
 
-const musicBaseFolder = "C:/Users/samia/Music";
+let baseFolder = process.argv[2];
+console.log(baseFolder);
+
+const musicBaseFolder = baseFolder ? baseFolder : "C:/Users/samia/Music";
 let options = {
     followLinks: false
 }

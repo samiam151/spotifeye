@@ -37,14 +37,13 @@ const SongPlayer = (function(){
         let song = info.song ? info.song : info;      
         let url = song.url;
         let id = song.id;
-        let songInContexts = contexts.find(contextObj => contextObj["id"] === id);
         // if (songInContexts){
         //     playSource(songInContexts["source"])
         // }
 
         SongService.getSongFromServer(song)
             .then(data => {      
-                process(data.response, song);
+            process(data.response, song);
         });
     }
 
@@ -80,6 +79,6 @@ const SongPlayer = (function(){
 
     function playSource(source){
         source.connect(context.destination); 
-        source.start(context.currentTime);
+        source.start(0);
     }
 }());

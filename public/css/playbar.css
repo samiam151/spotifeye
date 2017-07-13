@@ -24,6 +24,9 @@
     width: 45%;
     height: 52px;
     text-transform: capitalize;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
 
 .playbar .playbar--nowPlaying h2 {

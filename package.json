@@ -9,6 +9,7 @@
     "mediaserver": "^0.1.0"
   },
   "devDependencies": {
+    "compression": "^1.7.0",
     "express": "^4.15.3",
     "howler": "^2.0.4",
     "id3js": "^1.1.3",
