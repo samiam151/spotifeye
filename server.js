@@ -26,7 +26,8 @@ app.post("/song", (req, res) => {
     console.log("Heard song stream request...");
     console.log("\tGetting url...");
     let url = req.body.url;
-    res.set({"Content-Type": "audio/mpeg"});
+    // res.set({"Content-Type": "audio/mpeg"});
+    res.set({"Content-Type": "application/octet-stream"});
     
     console.log("\tCreating audio stream...");
     let readStream = fs.createReadStream(url);

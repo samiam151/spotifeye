@@ -38,7 +38,7 @@ walker.on("file", (root, fileStats, next) => {
                 if (err) {
                     console.log(err)
                 }
-                console.log(fileStats);
+                console.log(fileStats.name);
 
                 allSongs.push({
                     // type: ext,
@@ -59,6 +59,7 @@ walker.on("file", (root, fileStats, next) => {
     songIndex += 1;
     writeFile(allSongs);
 });
+console.log("songsPersonal.json created...");
 
 function writeFile(songsObj) {
     fs.writeFile("./data/songsPersonal.json", JSON.stringify({
@@ -68,6 +69,5 @@ function writeFile(songsObj) {
             console.log(err);
             return;
         }
-        console.log("songsPersonal.json created...");
     });
 }

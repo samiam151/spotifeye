@@ -1,5 +1,5 @@
 .playbar {
-    background-color: rgba(50,205,50, 0.9);
+    background-color: rgba(15,15,15,0.975);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -48,7 +48,7 @@
 
 .playbar .playbar--buttons i {
     padding: 10px 10.5px;
-    background-color: forestgreen;
+    background-color: #444;
     color: white;
     border-radius: 50%;
     margin: 0 0.4em;

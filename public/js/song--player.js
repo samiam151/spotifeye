@@ -33,6 +33,14 @@ const SongPlayer = (function(){
           initPlayback(nextSong);
     });
 
+    Events.subscribe("upload/progress", res => {
+        console.log(res);
+        let buffer = res.partialContent.response;
+        if(buffer && buffer !== undefined){
+            process(buffer);
+        }
+    });
+
     function initPlayback(info){  
         let song = info.song ? info.song : info;      
         let url = song.url;
@@ -41,10 +49,14 @@ const SongPlayer = (function(){
         //     playSource(songInContexts["source"])
         // }
 
-        SongService.getSongFromServer(song)
-            .then(data => {      
-            process(data.response, song);
-        });
+        SongService.getSongFromServer(song);
+            // .then(data => {  
+            //     console.log(data.response);
+                // console.log(typeof data.response);    
+            // process(data.response, song);
+        // });
+
+        
     }
 
     function startFromBeginning() {
@@ -67,11 +79,12 @@ const SongPlayer = (function(){
         }
     }
 
-    function process(audiostream, song) {
+    function process(audiostream, song = null) {
         stopSongPlaying();
         source = context.createBufferSource(); // Create Sound Source
         // cacheSource(source, song);
-        context.decodeAudioData(audiostream, function(buffer){
+        console.log(audiostream);
+        context.decodeAudioData(audiostream).then(buffer => {
             source.buffer = buffer;
             playSource(source);
         });

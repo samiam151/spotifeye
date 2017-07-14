@@ -5,6 +5,7 @@
   "main": "scripts.js",
   "proxy": "http://localhost:9000/",
   "dependencies": {
+    "audio-metadata": "^0.3.0",
     "body-parser": "^1.17.2",
     "mediaserver": "^0.1.0"
   },

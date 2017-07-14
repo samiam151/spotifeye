@@ -1,6 +1,6 @@
 header.header {
     padding: 0.3em 1em;
-    background-color: limegreen;
+    background-color: rgba(15,15,15,1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,6 +45,7 @@ header.header .playingStatus--year {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    color: #ddd;
 }
 
 .lastPlayed--container .lastPlayed--header {

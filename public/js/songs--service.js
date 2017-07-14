@@ -1,4 +1,5 @@
 /// @ts-check
+/// <reference path="./events.js" />
 "use strict";
 
 const SongService = (function(){
@@ -38,15 +39,37 @@ const SongService = (function(){
     }
 
     function getSongFromServer(song){
-        return new Promise((resolve, reject) => {
+        // return new Promise((resolve, reject) => {
+        //     let request = new XMLHttpRequest();
+        //     request.open("POST", `/song`, true);
+        //     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        //     request.responseType = "arraybuffer";
+        //     request.addEventListener("progress", (e) => {
+        //         Events.emit("song/progress", {
+        //             partialContent: e.target
+        //         })
+        //     });
+        //     // request.addEventListener("progress", (e) => resolve(e.target));
+        //     request.onload = () => resolve(request);
+        //     request.onerror = () => reject(request.statusText);
+        //     request.send(JSON.stringify(song)); 
+        // });
+        
             let request = new XMLHttpRequest();
             request.open("POST", `/song`, true);
             request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             request.responseType = "arraybuffer";
-            request.onload = () => resolve(request);
-            request.onerror = () => reject(request.statusText);
+            request.addEventListener("progress", (e) => {
+                console.log(e);
+                Events.emit("upload/progress", {
+                    partialContent: e.target
+                })
+            });
+            // request.addEventListener("progress", (e) => resolve(e.target));
+            request.onload = () => {};
+            request.onerror = () => {};
             request.send(JSON.stringify(song)); 
-        });
+
     }
     
     return {
