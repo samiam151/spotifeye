@@ -65,7 +65,6 @@ const SongService = (function(){
                     partialContent: e.target
                 })
             });
-            // request.addEventListener("progress", (e) => resolve(e.target));
             request.onload = () => {};
             request.onerror = () => {};
             request.send(JSON.stringify(song)); 

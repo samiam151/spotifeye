@@ -1,4 +1,11 @@
 /// @ts-check
+/// <reference path="../public/js/search.js" />
+/// <reference path="../public/js/songs--service.js" />
+/// <reference path="../public/js/songlist.js" />
+/// <reference path="../public/js/song.js" />
+/// <reference path="../public/js/sort.js" />
+/// <reference path="../public/js/playbar.js" />
+/// <reference path="../public/js/header.js" />
 "use strict";
 
 window.onload = function(){
@@ -10,11 +17,11 @@ function init() {
     const playbar = new Playbar();
     Searchbar.init(document.querySelector("#header--search"));
 
-    window.addEventListener("click", (e) => {
-        Events.emit("window/click", {
-            event: e
-        })
-    });
+    // window.addEventListener("click", (e) => {
+    //     Events.emit("window/click", {
+    //         event: e
+    //     })
+    // });
 
     let songsContainer = document.querySelector(".songsContainer");
     let sorterContainer = document.querySelector(".sorterContainer");

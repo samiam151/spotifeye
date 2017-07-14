@@ -45,18 +45,13 @@ const SongPlayer = (function(){
         let song = info.song ? info.song : info;      
         let url = song.url;
         let id = song.id;
-        // if (songInContexts){
-        //     playSource(songInContexts["source"])
-        // }
 
         SongService.getSongFromServer(song);
             // .then(data => {  
             //     console.log(data.response);
                 // console.log(typeof data.response);    
             // process(data.response, song);
-        // });
-
-        
+        // });       
     }
 
     function startFromBeginning() {
@@ -82,7 +77,6 @@ const SongPlayer = (function(){
     function process(audiostream, song = null) {
         stopSongPlaying();
         source = context.createBufferSource(); // Create Sound Source
-        // cacheSource(source, song);
         console.log(audiostream);
         context.decodeAudioData(audiostream).then(buffer => {
             source.buffer = buffer;
