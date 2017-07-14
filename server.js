@@ -39,7 +39,7 @@ app.post("/song", (req, res) => {
         res.end(err);
     });
     readStream.on("close", () => {
-        console.log("\tStream closed...")
+        console.log("\tStream closed...");
     });
 });
 

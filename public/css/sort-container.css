@@ -34,16 +34,13 @@
 .sorter--toggleButton {
     padding: 1px 5px;
     border-radius: 2px;
-    background-color: forestgreen;
-    border: 2px solid forestgreen;
     font-size: 1em;
     color: white;
 }
 
 .sorter--toggleButton:hover {
-    background-color: rgba(255,255,255,0.5);
     cursor: pointer;
-    color: forestgreen;
+    color: #ccc;
 }
 
 .sorter.header--fixed {
