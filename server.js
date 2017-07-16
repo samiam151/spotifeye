@@ -30,9 +30,12 @@ app.post("/song", (req, res) => {
     
     console.log("--- Creating audio stream...");
     let readStream = fs.createReadStream(url);
+    
     readStream.on("open", function(){
+    // readStream.on("data", function(chunk){
         console.log("--- Sending audio stream...");
         readStream.pipe(res);
+        // chunk.pipe(res);
     });
     readStream.on("error", (err) => {
         res.end(err);

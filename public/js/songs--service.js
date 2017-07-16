@@ -39,6 +39,7 @@ const SongService = (function(){
     }
 
     function getSongFromServer(song){
+        let index = 0;
         // return new Promise((resolve, reject) => {
         //     let request = new XMLHttpRequest();
         //     request.open("POST", `/song`, true);
@@ -60,9 +61,11 @@ const SongService = (function(){
             request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             request.responseType = "arraybuffer";
             request.addEventListener("progress", (e) => {
+                index++;
                 console.log(e);
                 Events.emit("upload/progress", {
-                    partialContent: e.target
+                    partialContent: e.currentTarget,
+                    index: index
                 })
             });
             request.onload = () => {};
