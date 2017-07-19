@@ -30,47 +30,30 @@ const SongService = (function(){
         let nextSong = null; 
         let groupSongs = SongService.getSongs();
         
-        if (nextID < songs.length) {
-            let currentSongsIndex = groupSongs.indexOf(groupSongs.find(song => song.id === currentID));
-            return groupSongs[++currentSongsIndex];
+        if (nextID === groupSongs[groupSongs.length - 1].id) {
+            return songs[0];  
         }
-        return songs[0];
-            
+        let nextSongID = groupSongs.indexOf(groupSongs.find(song => song.id === currentID)) + 1;
+        return groupSongs[nextSongID];
     }
 
     function getSongFromServer(song){
-        let index = 0;
-        // return new Promise((resolve, reject) => {
-        //     let request = new XMLHttpRequest();
-        //     request.open("POST", `/song`, true);
-        //     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        //     request.responseType = "arraybuffer";
-        //     request.addEventListener("progress", (e) => {
-        //         Events.emit("song/progress", {
-        //             partialContent: e.target
-        //         })
-        //     });
-        //     // request.addEventListener("progress", (e) => resolve(e.target));
-        //     request.onload = () => resolve(request);
-        //     request.onerror = () => reject(request.statusText);
-        //     request.send(JSON.stringify(song)); 
-        // });
-        
-            let request = new XMLHttpRequest();
-            request.open("POST", `/song`, true);
-            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            request.responseType = "arraybuffer";
-            request.addEventListener("progress", (e) => {
-                index++;
-                console.log(e);
-                Events.emit("upload/progress", {
-                    partialContent: e.currentTarget,
-                    index: index
-                })
-            });
-            request.onload = () => {};
-            request.onerror = () => {};
-            request.send(JSON.stringify(song)); 
+        let index = 0,
+            request = new XMLHttpRequest();
+        request.open("POST", `/song`, true);
+        request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        request.responseType = "arraybuffer";
+        request.addEventListener("progress", (e) => {
+            index++;
+            // console.log(e);
+            Events.emit("upload/progress", {
+                partialContent: e.currentTarget,
+                index: index
+            })
+        });
+        request.onload = () => {};
+        request.onerror = () => {};
+        request.send(JSON.stringify(song)); 
 
     }
     

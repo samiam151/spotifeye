@@ -7,7 +7,8 @@ const SongPlayer = (function(){
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     let context = new AudioContext(),
         contexts = [],
-        source = null;
+        source = null,
+        wasStopCommand = false;
 
     Events.subscribe("song/play", function(info){
         nowPlaying = info.song;
@@ -15,6 +16,7 @@ const SongPlayer = (function(){
     });
 
     Events.subscribe("song/stop", function(info){
+        wasStopCommand = true;
         stopSongPlaying();     
     });
 
@@ -34,10 +36,13 @@ const SongPlayer = (function(){
     });
 
     Events.subscribe("upload/progress", res => {
-        console.log(res);
+        // console.log(res);
         let buffer = res.partialContent.response;
         if(buffer && buffer !== undefined){
             process(buffer);
+        } else {
+            // console.log("not loaded...")
+            // console.log(buffer);
         }
     });
 
@@ -45,6 +50,7 @@ const SongPlayer = (function(){
         let song = info.song ? info.song : info;      
         let url = song.url;
         let id = song.id;
+        nowPlaying = song;
 
         SongService.getSongFromServer(song);
             // .then(data => {  
@@ -77,7 +83,14 @@ const SongPlayer = (function(){
     function process(audiostream, song = null) {
         stopSongPlaying();
         source = context.createBufferSource(); // Create Sound Source
-        console.log(audiostream);
+        
+        source.addEventListener("ended", (e) => {
+            // console.log(e);
+            if (!wasStopCommand){
+                console.log("wasNotStop");
+                Events.emit("song/next");
+            }
+        });    
         context.decodeAudioData(audiostream).then(buffer => {
             source.buffer = buffer;
             playSource(source);

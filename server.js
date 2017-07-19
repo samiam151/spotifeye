@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const compression = require("compression");
 const musicFolder = "C:/Users/samia/Music/New Music/";
+const dataFile = __dirname + "/index.html";
 
 // Middleware
 app.use(compression());
@@ -14,7 +15,7 @@ app.use(express.static("public"));
 // Routing
 app.get('/', (req, res) => {
     console.log("Fetching page...");
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(dataFile);
 });
 
 app.get("/data", (req, res) => {
@@ -30,7 +31,7 @@ app.post("/song", (req, res) => {
     
     console.log("--- Creating audio stream...");
     let readStream = fs.createReadStream(url);
-    
+    // 
     readStream.on("open", function(){
     // readStream.on("data", function(chunk){
         console.log("--- Sending audio stream...");
@@ -49,6 +50,6 @@ app.post("/song", (req, res) => {
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
     console.log("Welcome to Spotifeye!");
-    console.log(`Now playing on port ${port}...`);
+    console.log(`Playing on port ${port}...`);
     console.log("");
 });
