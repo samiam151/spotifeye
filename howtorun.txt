@@ -1,0 +1,6 @@
+To Create Playlist:
+    Find desired music folder
+    Run "npm run aggregate (musicFolder)"
+
+To Start Project:
+    Run npm run server
