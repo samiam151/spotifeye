@@ -2,7 +2,7 @@
 "use strict";
 
 class Song {
-    constructor(id, title="Unknown", artist="Unknown", year="Unknown", url, type="", album="", filename=""){ 
+    constructor(id, hash, title="Unknown", artist="Unknown", year="Unknown", url, type="", album="", filename=""){ 
         this.title = title;
         this.artist = artist;
         this.year = year ? year : "N/A";
@@ -12,6 +12,7 @@ class Song {
         this.fileName = filename;
         this.album = album;
         this.element = this.buildTemplate();
+        this.hash = hash;
 
         this.element.addEventListener("click", (e) => {
             Events.emit("song/play", {
@@ -28,7 +29,8 @@ class Song {
             url: this.url,
             type: this.type,
             fileName: this.fileName,
-            id: this.id
+            id: this.id,
+            hash: this.hash
         }
     }
     

@@ -3,6 +3,7 @@ const path = require("path");
 const walk = require("walk");
 const audoMetaData = require("audio-metadata");
 const id3 = require("id3js");
+const crypto = require("crypto");
 
 let baseFolder = process.argv[2];
 console.log(baseFolder);
@@ -24,6 +25,7 @@ String.prototype.removeNull = function () {
     }
 }
 
+// @ts-ignore
 walker.on("file", (root, fileStats, next) => {
     
     let url = path.join(root, fileStats.name.replace(/\\/g, "/"));
@@ -39,7 +41,7 @@ walker.on("file", (root, fileStats, next) => {
                     console.log(err)
                 }
                 console.log(fileStats.name);
-
+                let hash = encrypt(url);
                 allSongs.push({
                     // type: ext,
                     id: songIndex,
@@ -49,7 +51,8 @@ walker.on("file", (root, fileStats, next) => {
                     artist: tags.artist ? tags.artist.removeNull() : "",
                     year: tags.year,
                     album: tags.album,
-                    track: tags.v1.track
+                    track: tags.v1.track,
+                    hash: hash
                 });
             });
         }
@@ -70,4 +73,11 @@ function writeFile(songsObj) {
             return;
         }
     });
+}
+
+function encrypt(url){
+  var cipher = crypto.createCipher("aes-256-ctr", "test")
+  var crypted = cipher.update(url,'utf8','hex')
+  crypted += cipher.final('hex');
+  return crypted;
 }

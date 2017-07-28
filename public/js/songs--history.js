@@ -25,10 +25,10 @@ let SongHistory = (function(){
     }
 
     function getLastPlayed() {
-        if (lastPlayedIndex < 0)
-            return null;
-
-        return songsPlayed[lastPlayedIndex];
+        if (songsPlayed.length > 0){
+            return songsPlayed[songsPlayed.length - 1];
+        }
+        return "";
     }
 
     return {

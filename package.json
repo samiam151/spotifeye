@@ -2,9 +2,12 @@
   "name": "spotifye",
   "version": "1.0.0",
   "description": "Learning observer patterns in javascript",
-  "main": "scripts.js",
+  "main": "server.js",
   "proxy": "http://localhost:9000/",
   "dependencies": {
+    "bcrypt": "^1.0.2",
+    "crypto": "0.0.3",
+    "nodemon": "^1.11.0"
   },
   "devDependencies": {
     "compression": "^1.7.0",
@@ -18,7 +21,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "aggregate": "node data/music.js"
   },
   "repository": {

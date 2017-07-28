@@ -5,9 +5,12 @@ const bodyParser = require('body-parser');
 const compression = require("compression");
 const musicFolder = "C:/Users/samia/Music/New Music/";
 const dataFile = __dirname + "/index.html";
+const crypto = require("crypto");
 
 // Middleware
-app.use(compression());
+app.use(compression({
+    level: 8
+}));
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(express.static("public"));
@@ -23,9 +26,12 @@ app.get("/data", (req, res) => {
     res.sendFile(__dirname + "/data/songsPersonal.json");
 });
 
-app.post("/song", (req, res) => {
+app.get("/song", (req, res) => {
     console.log("Heard song stream request...");
-    let url = req.body.url;
+    let hash = req.query.hash;
+    let url = decrypt(hash);
+    console.log(url);
+
     // res.set({"Content-Type": "audio/mpeg"});
     res.set({"Content-Type": "application/octet-stream"});
     
@@ -47,9 +53,16 @@ app.post("/song", (req, res) => {
 });
 
 // Start server
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 5200;
 app.listen(port, function() {
     console.log("Welcome to Spotifeye!");
     console.log(`Playing on port ${port}...`);
     console.log("");
 });
+
+function decrypt(hash){
+  var decipher = crypto.createDecipher("aes-256-ctr", "test")
+  var dec = decipher.update(hash,'hex','utf8')
+  dec += decipher.final('utf8');
+  return dec;
+}
