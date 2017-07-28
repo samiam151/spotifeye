@@ -2,15 +2,8 @@
 "use strict";
 
 const SongPlayer = (function(){
-    const AUDIO = document.getElementById("audio");
-
+    const AUDIO = new Audio();
     let nowPlaying = null;
-    /// @ts-ignore
-    window.AudioContext = window.AudioContext||window.webkitAudioContext;
-    let context = new AudioContext(),
-        contexts = [],
-        source = null,
-        wasStopCommand = false;
 
     Events.subscribe("song/play", function(info){
         nowPlaying = info.song;
@@ -18,7 +11,6 @@ const SongPlayer = (function(){
     });
 
     Events.subscribe("song/stop", function(info){
-        wasStopCommand = true;
         stopSongPlaying();     
     });
 
@@ -46,7 +38,15 @@ const SongPlayer = (function(){
     //         // console.log(buffer);
     //     }
     // });
-
+    
+    function getPlayedPercentage(){
+        if (!AUDIO.paused){
+            let played = AUDIO.currentTime,
+                duration = AUDIO.duration;
+            return played / duration;
+        }
+    }
+    
     function initPlayback(info){  
         let song = info.song ? info.song : info;      
         let url = song.url;
@@ -68,16 +68,18 @@ const SongPlayer = (function(){
         
     }
 
-    // function startFromBeginning() {
-    //     AUDIO.stop();
-    //     AUDIO.start();
-    // }
+    function startFromBeginning() {
+        if (!AUDIO.paused){
+            AUDIO.currentTime = 0;
+        }
+    }
 
-    // function stopSongPlaying() {
-    //     if (source){
-    //         source.stop();
-    //     }
-    // }
+    function stopSongPlaying() {
+        if (!AUDIO.paused){
+            AUDIO.pause();
+            AUDIO.currentTime = 0;
+        }
+    }
 
     // function cacheSource(source, song) {
     //     if (!contexts.some(contextObj => contextObj["id"] === song.id)){
@@ -109,4 +111,8 @@ const SongPlayer = (function(){
     //     source.connect(context.destination); 
     //     source.start(0);
     // }
+
+    return {
+        audio: AUDIO
+    }
 }());

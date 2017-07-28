@@ -76,8 +76,8 @@ function writeFile(songsObj) {
 }
 
 function encrypt(url){
-  var cipher = crypto.createCipher("aes-256-ctr", "test")
-  var crypted = cipher.update(url,'utf8','hex')
-  crypted += cipher.final('hex');
-  return crypted;
+    var cipher = crypto.createCipher("aes-256-ctr", "test")
+    var crypted = cipher.update(url,'utf8','hex')
+    crypted += cipher.final('hex');
+    return crypted;
 }

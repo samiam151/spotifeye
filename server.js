@@ -37,12 +37,23 @@ app.get("/song", (req, res) => {
     
     console.log("--- Creating audio stream...");
     let readStream = fs.createReadStream(url);
-    // 
+    
     readStream.on("open", function(){
     // readStream.on("data", function(chunk){
         console.log("--- Sending audio stream...");
-        readStream.pipe(res);
-        // chunk.pipe(res);
+        // readStream.pipe(res);
+        // let fileSize = fs.statSync(url).size;
+        // let chunksize = fileSize / 10;
+
+        // const head = {
+        //     'Content-Range': `bytes ${0}-${chunksize - 1}/${fileSize}`,
+        //     'Accept-Ranges': 'bytes',
+        //     'Content-Length': chunksize,
+        //     'Content-Type': 'audio/mpeg',
+        // }
+
+        // res.writeHead(206, head)
+        readStream.pipe(res)
     });
     readStream.on("error", (err) => {
         res.end(err);
@@ -53,7 +64,7 @@ app.get("/song", (req, res) => {
 });
 
 // Start server
-var port = process.env.PORT || 5200;
+var port = process.env.PORT || 5100;
 app.listen(port, function() {
     console.log("Welcome to Spotifeye!");
     console.log(`Playing on port ${port}...`);
