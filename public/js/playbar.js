@@ -3,11 +3,14 @@
 
 class Playbar {
     constructor(){
-        this.nowPlaying = document.querySelector("div.playbar--nowPlaying");
+        this.nowPlaying = document.querySelector("div.playbar--nowPlaying .playingText");
         this.nextSong = document.querySelector(".playbar--buttons .playbar__nextButton");
         this.stopSong = document.querySelector(".playbar--buttons .playbar__stopButton");
         this.startFromBeginning = document.querySelector(".playbar--buttons .playbar__back");
         this.isPlaying = false;
+
+        this.statusBar = document.querySelector(".playbar .status .done");
+
         this.songPlaying = null;
         
         Events.subscribe('song/play', (song) => { 

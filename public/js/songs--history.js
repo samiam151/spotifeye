@@ -26,14 +26,13 @@ let SongHistory = (function(){
 
     function getLastPlayed() {
         if (songsPlayed.length > 0){
-            return songsPlayed[songsPlayed.length - 1];
+            return songsPlayed[songsPlayed.length - 2];
         }
         return "";
     }
 
     return {
         history: songsPlayed,
-        length: songsPlayed.length,
         getLastPlayed: getLastPlayed
     };
 }());

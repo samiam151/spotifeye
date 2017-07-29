@@ -25,16 +25,17 @@ const SongService = (function(){
     }
 
     function getNextSong(nowPlaying) {
-        let currentID = nowPlaying.id;
-        let nextID = ++nowPlaying.id;
-        let nextSong = null; 
-        let groupSongs = SongService.getSongs();
-        
-        if (nextID === groupSongs[groupSongs.length - 1].id) {
-            return songs[0];  
-        }
-        let nextSongID = groupSongs.indexOf(groupSongs.find(song => song.id === currentID)) + 1;
-        return groupSongs[nextSongID];
+        let currentID = nowPlaying.id,
+            nextSong = null,
+            groupSongs = SongService.getSongs();    
+
+        let nextSongID = groupSongs.indexOf(groupSongs.filter(song => song.id === currentID)[0]) + 1;
+        nextSong = groupSongs[nextSongID];
+
+        if (nextSong !== undefined)
+            return nextSong;
+
+        return groupSongs[0];
     }
 
     function getSongFromServer(song){
@@ -66,14 +67,10 @@ const SongService = (function(){
 }());
 
 var SongsDataService = (function(){
-
     function getCategories(songs){
         return Object.keys(songs[0]).sort();
     }
-
     return {
         getCategories: getCategories
     }
-
-/// @ts-ignore
 })();

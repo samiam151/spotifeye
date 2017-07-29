@@ -66,4 +66,6 @@
     color: grey;
 }
 
-
+.playbar .status span {
+    display: block;
+}

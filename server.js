@@ -32,27 +32,13 @@ app.get("/song", (req, res) => {
     let url = decrypt(hash);
     console.log(url);
 
-    // res.set({"Content-Type": "audio/mpeg"});
     res.set({"Content-Type": "application/octet-stream"});
     
     console.log("--- Creating audio stream...");
     let readStream = fs.createReadStream(url);
     
     readStream.on("open", function(){
-    // readStream.on("data", function(chunk){
         console.log("--- Sending audio stream...");
-        // readStream.pipe(res);
-        // let fileSize = fs.statSync(url).size;
-        // let chunksize = fileSize / 10;
-
-        // const head = {
-        //     'Content-Range': `bytes ${0}-${chunksize - 1}/${fileSize}`,
-        //     'Accept-Ranges': 'bytes',
-        //     'Content-Length': chunksize,
-        //     'Content-Type': 'audio/mpeg',
-        // }
-
-        // res.writeHead(206, head)
         readStream.pipe(res)
     });
     readStream.on("error", (err) => {

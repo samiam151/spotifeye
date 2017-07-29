@@ -54,12 +54,12 @@ walker.on("file", (root, fileStats, next) => {
                     track: tags.v1.track,
                     hash: hash
                 });
+                songIndex += 1;
             });
         }
         next();
     });
 
-    songIndex += 1;
     writeFile(allSongs);
 });
 console.log("songsPersonal.json created...");

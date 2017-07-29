@@ -3,24 +3,31 @@
 
 const SongPlayer = (function(){
     const AUDIO = new Audio();
+    AUDIO.onended = function(){
+         Events.emit("song/next");
+    }
+
     let nowPlaying = null;
+    function getNowPlaying(){
+        return nowPlaying;
+    }
 
     Events.subscribe("song/play", function(info){
         nowPlaying = info.song;
         initPlayback(info);     
     });
 
-    Events.subscribe("song/stop", function(info){
+    Events.subscribe("song/stop", function(){
         stopSongPlaying();     
     });
 
-    // Events.subscribe("song/back", function(info){
-    //     startFromBeginning();     
-    // });
+    Events.subscribe("song/back", function(){
+        startFromBeginning();
+    });
 
     Events.subscribe("song/next", function(info){
           let nextSong = SongService.getNextSong(nowPlaying);
-
+          nowPlaying = nextSong;
           Events.emit("playing/update", {
               newSong: nextSong
           });
@@ -51,6 +58,7 @@ const SongPlayer = (function(){
         let song = info.song ? info.song : info;      
         let url = song.url;
         nowPlaying = song;
+
         // SongService.getSongFromServer(song)
         //     .then(data => {
         //         console.log(data);
@@ -64,7 +72,7 @@ const SongPlayer = (function(){
         AUDIO.src = `/song?hash=${song.hash}`;        
         setTimeout(function(){
             AUDIO.play();
-        }, 1000)
+        }, 2000)
         
     }
 
@@ -113,6 +121,7 @@ const SongPlayer = (function(){
     // }
 
     return {
-        audio: AUDIO
+        audio: AUDIO,
+        getNowPlaying   : getNowPlaying    
     }
 }());
