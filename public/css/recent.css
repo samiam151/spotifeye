@@ -1,0 +1,33 @@
+.recentlyPlayed--list {
+    display: none;
+}
+
+.recentlyPlayed--list.show {
+    display: block;
+    position: absolute;
+    background-color: #ccc;
+    padding: 6px;
+    font-size: 14px;
+    right: 40px;
+    width: 20em;
+    top: 3.6em;
+    border: 2px solid #aaa;
+    border-radius: 0 0 2px 2px;
+}
+
+.recentlyPlayed--list li {
+    list-style-type: none;
+    color: black;
+    padding: 6px 0;
+}
+
+.recentlyPlayed--list li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.recentlyPlayed--list li i {
+    margin-right: 8px;
+    position: relative;
+    top: 1px;
+}

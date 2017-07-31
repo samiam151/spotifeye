@@ -1,4 +1,5 @@
 /// @ts-check
+/// <reference path="./events.js" />
 "use strict";
 
 let SongHistory = (function(){

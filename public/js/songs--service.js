@@ -24,6 +24,14 @@ const SongService = (function(){
         });
     }
 
+    function getSongByID(id){
+        if (id) {
+            if (songs) {
+                return songs.filter(song => +song.id === +id)[0];
+            }
+        }
+    }
+
     function getNextSong(nowPlaying) {
         let currentID = nowPlaying.id,
             nextSong = null,
@@ -62,11 +70,12 @@ const SongService = (function(){
         getNextSong: getNextSong,
         getSongs: getSongs,
         getSongFromServer: getSongFromServer,
-        cacheSongs: cacheSongs
+        cacheSongs: cacheSongs,
+        getSongByID: getSongByID
     }
 }());
 
-var SongsDataService = (function(){
+const SongsDataService = (function(){
     function getCategories(songs){
         return Object.keys(songs[0]).sort();
     }

@@ -1,3 +1,7 @@
+.song__html.playing {
+    background-color: rgba(15,200,15,0.25);
+}
+
 .song__html h3.song--title {
     flex: 0 0 30%;
 }

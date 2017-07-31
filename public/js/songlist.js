@@ -24,13 +24,22 @@ class SongList {
           this.render(filterSongs);
         });
 
-        Events.subscribe("filter/toggle", info => {
+        Events.subscribe("filter/toggle", (info) => {
             let isOpen = info.isOpen;
             if (isOpen){
                 this.targetElement.classList.add("openFilter");
             } else {
                 this.targetElement.classList.remove("openFilter");
             }
+        });
+
+        Events.subscribe("song/play", (info) => {
+            // Clear the current song
+            this.changeNowPlayingDOM(info.song);
+        });
+
+        Events.subscribe("playing/update", (info) => {
+           this.changeNowPlayingDOM(info.newSong);
         });
     }
 
@@ -57,6 +66,19 @@ class SongList {
         });
 
         return sortedSongs;
+    }
+
+    changeNowPlayingDOM(song){
+        // Clear the current song
+        let currentSong = document.querySelector(".song__html.playing");
+        if (currentSong)
+            currentSong.classList.remove("playing");
+
+        // Add the playing class
+        let songPlaying = song;
+        let songDOM = document.querySelector(`.song__html[data-id="${songPlaying.id}"]`);
+        if (songDOM)
+            songDOM.classList.add("playing");
     }
 
     render(songs = this.songs) {

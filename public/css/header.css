@@ -56,3 +56,12 @@ header.header .playingStatus--year {
     font-size: 0.9em;
     text-align: center;
 }
+
+.recentlyPlayed {
+    color: white;
+}
+
+.recentlyPlayed i:hover {
+    color: #ddd;
+    cursor: pointer;
+}

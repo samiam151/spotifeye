@@ -5,6 +5,10 @@
     font-family: 'Zilla Slab', serif;
 }
 
+*::selection {
+    background-color: limegreen;
+}
+
 html {
     font-size: 16px;
 }

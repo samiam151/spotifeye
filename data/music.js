@@ -46,7 +46,6 @@ walker.on("file", (root, fileStats, next) => {
                     // type: ext,
                     id: songIndex,
                     name: fileStats.name ? fileStats.name.removeNull() : "",
-                    url: url,
                     title: tags.title,
                     artist: tags.artist ? tags.artist.removeNull() : "",
                     year: tags.year,

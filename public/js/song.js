@@ -2,12 +2,11 @@
 "use strict";
 
 class Song {
-    constructor(id, hash, title="Unknown", artist="Unknown", year="Unknown", url, type="", album="", filename=""){ 
+    constructor(id, hash, title="Unknown", artist="Unknown", year="Unknown", type="", album="", filename=""){ 
         this.title = title;
         this.artist = artist;
         this.year = year ? year : "N/A";
         this.id = id;
-        this.url = url;
         this.type = type;
         this.fileName = filename;
         this.album = album;
@@ -26,7 +25,6 @@ class Song {
             title: this.title,
             artist: this.artist,
             year: this.year,
-            url: this.url,
             type: this.type,
             fileName: this.fileName,
             id: this.id,

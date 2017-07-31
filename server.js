@@ -4,7 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const compression = require("compression");
 const musicFolder = "C:/Users/samia/Music/New Music/";
-const dataFile = __dirname + "/index.html";
+const homePage = __dirname + "/index.html";
+const dataFile = __dirname + "/data/songsPersonal.json";
 const crypto = require("crypto");
 
 // Middleware
@@ -18,18 +19,18 @@ app.use(express.static("public"));
 // Routing
 app.get('/', (req, res) => {
     console.log("Fetching page...");
-    res.sendFile(dataFile);
+    res.sendFile(homePage);
 });
 
 app.get("/data", (req, res) => {
     console.log("Sending song data...");
-    res.sendFile(__dirname + "/data/songsPersonal.json");
+    res.sendFile(dataFile);
 });
 
 app.get("/song", (req, res) => {
     console.log("Heard song stream request...");
-    let hash = req.query.hash;
-    let url = decrypt(hash);
+    console.log("Decrypting URL...");
+    let url = decrypt(req.query.hash);
     console.log(url);
 
     res.set({"Content-Type": "application/octet-stream"});

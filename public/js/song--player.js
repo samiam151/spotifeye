@@ -1,15 +1,13 @@
 /// @ts-check
+/// <reference path="./events.js" />
+/// <reference path="./songs--service.js" />
 "use strict";
 
 const SongPlayer = (function(){
     const AUDIO = new Audio();
+    let nowPlaying = null;
     AUDIO.onended = function(){
          Events.emit("song/next");
-    }
-
-    let nowPlaying = null;
-    function getNowPlaying(){
-        return nowPlaying;
     }
 
     Events.subscribe("song/play", function(info){
@@ -34,17 +32,6 @@ const SongPlayer = (function(){
 
           initPlayback(nextSong);
     });
-
-    // Events.subscribe("upload/progress", res => {
-    //     // console.log(res);
-    //     let buffer = res.partialContent.response;
-    //     if(buffer && buffer !== undefined){
-    //         process(buffer);
-    //     } else {
-    //         // console.log("not loaded...")
-    //         // console.log(buffer);
-    //     }
-    // });
     
     function getPlayedPercentage(){
         if (!AUDIO.paused){
@@ -56,24 +43,17 @@ const SongPlayer = (function(){
     
     function initPlayback(info){  
         let song = info.song ? info.song : info;      
-        let url = song.url;
         nowPlaying = song;
 
-        // SongService.getSongFromServer(song)
-        //     .then(data => {
-        //         console.log(data);
-        //     });
-            // .then(data => {  
-            //     console.log(data.response);
-                // console.log(typeof data.response);    
-            // process(data.response, song);
-        // });   
+        AUDIO.src = `/song?hash=${song.hash}`;   
 
-        AUDIO.src = `/song?hash=${song.hash}`;        
-        setTimeout(function(){
+        if (AUDIO.readyState > 2){
             AUDIO.play();
-        }, 2000)
-        
+        } else {
+            setTimeout(function(){
+                AUDIO.play();
+            }, 500);
+        }   
     }
 
     function startFromBeginning() {
@@ -89,39 +69,12 @@ const SongPlayer = (function(){
         }
     }
 
-    // function cacheSource(source, song) {
-    //     if (!contexts.some(contextObj => contextObj["id"] === song.id)){
-    //         contexts.push({
-    //             id: song.id,
-    //             source: source
-    //         });
-    //     }
-    // }
-    
-    // function process(audiostream, song = null) {
-    //     stopSongPlaying();
-    //     source = context.createBufferSource(); // Create Sound Source
-        
-    //     source.addEventListener("ended", (e) => {
-    //         // console.log(e);
-    //         if (!wasStopCommand){
-    //             console.log("wasNotStop");
-    //             Events.emit("song/next");
-    //         }
-    //     });    
-    //     context.decodeAudioData(audiostream).then(buffer => {
-    //         source.buffer = buffer;
-    //         playSource(source);
-    //     });
-    // }
-
-    // function playSource(source){
-    //     source.connect(context.destination); 
-    //     source.start(0);
-    // }
+    function getNowPlaying(){
+        return nowPlaying;
+    }
 
     return {
         audio: AUDIO,
-        getNowPlaying   : getNowPlaying    
+        getNowPlaying: getNowPlaying    
     }
 }());
