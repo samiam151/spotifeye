@@ -1,7 +1,14 @@
-1. Pause / Play state
-2. Progress Bar
-3. Progress jogging?
-4. Song recommendations
+Quick Fixes / Additions
+==================================
+Pause / Play state
+Progress Bar
+Progress jogging?
+Repeat Song
+Make "data.js" import as a namespaced module
 
-5. Really get streaming working
-6. Actual deployment?
+Big Todos
+==================================
+Bundling / Modularize
+Song recommendations
+Really get streaming working
+Actual deployment?

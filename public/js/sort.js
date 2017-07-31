@@ -17,17 +17,6 @@ class SortItem {
         this.initialOrder = "desc";
         this.order = "desc";
 
-        // Events.subscribe("window/click", (e) => {
-        //     console.log(e);
-        //     if (e.event.target.classList.contains("sorter--item")){
-        //         this.arrowClasses.forEach(cssclass => {
-        //             try {
-        //                 this.iconElement.classList.remove(this.arrowClass);
-        //             } catch(err){}
-        //         });
-        //     }
-        // })
-
         this.element.addEventListener("click", (e) => {
             this.onClick();
         });
