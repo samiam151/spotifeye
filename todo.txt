@@ -1,6 +1,7 @@
 1. Pause / Play state
 2. Progress Bar
 3. Progress jogging?
+4. Song recommendations
 
-4. Really get streaming working
-5. Actual deployment?
+5. Really get streaming working
+6. Actual deployment?
