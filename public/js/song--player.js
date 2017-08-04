@@ -15,12 +15,16 @@ const SongPlayer = (function(){
         initPlayback(info);     
     });
 
-    Events.subscribe("song/stop", function(){
-        stopSongPlaying();     
-    });
-
     Events.subscribe("song/back", function(){
         startFromBeginning();
+    });
+
+    Events.subscribe("song/pause", function(){
+        AUDIO.pause();
+    });
+
+    Events.subscribe("song/resume", function(){
+        AUDIO.play();
     });
 
     Events.subscribe("song/next", function(info){
@@ -71,6 +75,10 @@ const SongPlayer = (function(){
 
     function getNowPlaying(){
         return nowPlaying;
+    }
+
+    function pausePlaying(){
+        AUDIO.pause();
     }
 
     return {

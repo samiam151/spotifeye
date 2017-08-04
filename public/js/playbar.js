@@ -5,7 +5,7 @@ class Playbar {
     constructor(){
         this.nowPlaying = document.querySelector("div.playbar--nowPlaying .playingText");
         this.nextSong = document.querySelector(".playbar--buttons .playbar__nextButton");
-        this.stopSong = document.querySelector(".playbar--buttons .playbar__stopButton");
+        this.toggleSong = document.querySelector(".playbar--buttons .playbar__stopButton");
         this.startFromBeginning = document.querySelector(".playbar--buttons .playbar__back");
         this.isPlaying = false;
 
@@ -31,8 +31,14 @@ class Playbar {
             Events.emit("song/back");        
         });
 
-        this.stopSong.addEventListener("click", (e) => {
-            Events.emit("song/stop");
+        this.toggleSong.addEventListener("click", (e) => {
+            if (SongPlayer.audio.paused){
+                Events.emit("song/resume");
+                this.toggleSong.innerHTML = "<i class='fa fa-pause'></i>";
+            } else {
+                Events.emit("song/pause");
+                this.toggleSong.innerHTML = "<i class='fa fa-play'></i>";
+            }
         });
     }
 

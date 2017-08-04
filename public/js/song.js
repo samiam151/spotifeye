@@ -1,7 +1,7 @@
 /// @ts-check
 "use strict";
 
-class Song {
+class SongProxy {
     constructor(id, hash, title="Unknown", artist="Unknown", year="Unknown", type="", album="", filename=""){ 
         this.title = title;
         this.artist = artist;

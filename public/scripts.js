@@ -30,7 +30,7 @@ function init() {
         SongService.cacheSongs(data.songs);
         let songs = data.songs;
         let categories = SongsDataService.getCategories(songs);
-        let songObjs = songs.map(song => new Song(song.id, song.hash, song.title, song.artist, song.year, song.type, song.album, song.name));
+        let songObjs = songs.map(song => new SongProxy(song.id, song.hash, song.title, song.artist, song.year, song.type, song.album, song.name));
         let songlist = new SongList(songsContainer, songObjs);
         
         // Add sorters
