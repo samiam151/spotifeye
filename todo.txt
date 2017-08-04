@@ -1,6 +1,5 @@
 Quick Fixes / Additions
 ==================================
-Pause / Play state
 Progress Bar
 Progress jogging?
 Repeat Song
