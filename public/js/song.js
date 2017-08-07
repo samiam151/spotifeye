@@ -36,7 +36,7 @@ class SongProxy {
         /// @ts-ignore
         if (this.title && this.artist){
             return $(`
-                <div class="song__html" data-id="${this.id}" data-title="${this.title}">
+                <div class="song__html" id="song--${this.id}" data-id="${this.id}" data-title="${this.title}">
                     <div class="song__html--inner">
                         <h3 class="song--title">${this.title}</h3>
                         <p class="song--artist">${this.artist}</p>
